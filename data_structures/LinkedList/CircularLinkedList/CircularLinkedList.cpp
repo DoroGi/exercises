@@ -24,12 +24,29 @@ private:
         return tmp;
     }
 
+    void destroyList(node<T>* head)
+    {
+        if (head != nullptr)
+        {
+            destroyList(head->next);
+            delete head;
+        }
+    }
+
 public:
+    //O(1)
     CircularList()
     {
         tail = nullptr;
         size = 0;
     }
+
+    //O(n)
+    ~CircularList()
+    {
+        destroyList(root);
+    }
+
     //O(1)
     size_t getSize()
     {

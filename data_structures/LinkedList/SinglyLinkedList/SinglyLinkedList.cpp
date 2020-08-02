@@ -24,12 +24,28 @@ private:
         return tmp;
     }
 
+    void destroyList(node<T>* head)
+    {
+        if (head != nullptr)
+        {
+            destroyList(head->next);
+            delete head;
+        }
+    }
+
 public:
+    //O(1)
     LinkedList()
     {
         head = nullptr;
         tail = nullptr;
         size = 0;
+    }
+
+    //O(n)
+    ~LinkedList()
+    {
+        destroyList(root);
     }
 
     //O(1)
