@@ -45,7 +45,7 @@ public:
     //O(n)
     ~DoubleLinkedList()
     {
-        destroyList(root);
+        destroyList(head);
     }
 
     //O(1)
