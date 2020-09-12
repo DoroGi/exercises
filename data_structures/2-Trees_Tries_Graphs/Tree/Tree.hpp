@@ -4,7 +4,7 @@
 using namespace std;
 
 template <typename T>
-struct node
+class node
 {
     node<T>* parent;
     T data;

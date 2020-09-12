@@ -4,8 +4,8 @@
 int main()
 {
     TreeNode<int> root = TreeNode<int>(nullptr, 123);
-    root.setLeftChild(55);
-    root.setRightChild(643);   
-    cout << root.getData() << " " << root.getLeftChild()->getData() << " " << root.getRightChild()->getData() << " ";
+    root.leftChild = &TreeNode<int>(&root, 55);
+    root.rightChild = &TreeNode<int>(&root, 643);   
+    cout << root.data << " " << root.leftChild->data << " " << root.rightChild->data << " ";
     return 0;
 }
